@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 
-import { usePopover } from '@/hooks/use-popover';
+import { usePopover } from '@/shared/hooks/use-popover';
 import { AccountPopover } from '@/shared/layout/account-popover';
 import { Icons } from '@/shared/components/Icons';
 import { layoutConfig } from '@/shared/config/layout';
