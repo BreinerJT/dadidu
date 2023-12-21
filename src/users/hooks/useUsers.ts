@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query';
 
 import { dadiduApi } from '@/apis/dadiduApi';
-import { Data } from '@/types/user';
+import { Data } from '@/users/types/user';
 
 const getAllUsers = async () => {
 	const users = await dadiduApi.get<Data>('/api/users/getall');

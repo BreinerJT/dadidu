@@ -1,6 +1,6 @@
 import { FC, ChangeEvent } from 'react';
 import { Card, InputAdornment, OutlinedInput, SvgIcon } from '@mui/material';
-import { Icons } from '@/components/shared/Icons';
+import { Icons } from '@/shared/components/Icons';
 
 interface Props {
 	value: string;

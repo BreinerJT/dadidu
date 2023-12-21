@@ -3,9 +3,9 @@ import NextLink from 'next/link';
 
 import { Box } from '@mui/material';
 
-import { Logo } from '@/components/shared/Logo';
+import { Logo } from '@/shared/components/Logo';
 
-export const Layout = ({
+export const AuthLayout = ({
 	children,
 	title
 }: {

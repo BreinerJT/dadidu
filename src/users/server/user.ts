@@ -1,5 +1,5 @@
 import { dadiduApi } from '@/apis/dadiduApi';
-import { Data } from '@/types/user';
+import { Data } from '@/users/types/user';
 
 export const getUserById = async (id: string) => {
 	try {

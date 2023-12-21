@@ -1,3 +1,4 @@
+import { useSession } from 'next-auth/react';
 import {
 	Avatar,
 	Badge,
@@ -10,11 +11,11 @@ import {
 	CircularProgress
 } from '@mui/material';
 import { alpha } from '@mui/material/styles';
+
 import { usePopover } from '@/hooks/use-popover';
-import { AccountPopover } from './account-popover';
-import { Icons } from '../shared/Icons';
-import { useSession } from 'next-auth/react';
-import { layoutConfig } from '@/config/layout';
+import { AccountPopover } from '@/shared/layout/account-popover';
+import { Icons } from '@/shared/components/Icons';
+import { layoutConfig } from '@/shared/config/layout';
 
 export const TopNav = ({ onNavOpen }: { onNavOpen: () => void }) => {
 	const { data: session, status } = useSession();

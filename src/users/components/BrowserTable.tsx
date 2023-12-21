@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import { ChangeEvent, FC, MouseEvent, useState } from 'react';
+import { ChangeEvent, MouseEvent, useState } from 'react';
 
 import {
 	Avatar,
@@ -24,12 +24,11 @@ import {
 } from '@mui/material';
 import toast from 'react-hot-toast';
 
-import { Scrollbar } from '@/components/shared/Scrollbar';
-import { Icons } from '@/components/shared/Icons';
-import { getInitials } from '@/utils/getInitials';
-import { User } from '@/types/user';
-import { useUserMutation } from '@/hooks/user/useUserMutation';
-import Image from 'next/image';
+import { Scrollbar } from '@/shared/components/Scrollbar';
+import { Icons } from '@/shared/components/Icons';
+import { getInitials } from '@/shared/utils/getInitials';
+import { User } from '@/users/types/user';
+import { useUserMutation } from '@/users/hooks/useUserMutation';
 
 export interface BrowserTableProps {
 	count: number;

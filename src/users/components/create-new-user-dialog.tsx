@@ -11,9 +11,9 @@ import {
 import { useFormik } from 'formik';
 import toast, { Toaster } from 'react-hot-toast';
 
-import { useUserMutation } from '@/hooks/user/useUserMutation';
-import { formUsuarioConfig } from '@/config/formUsuario';
-import { CreateUser, createUserValidation } from '@/validations/user';
+import { useUserMutation } from '@/users/hooks/useUserMutation';
+import { formUsuarioConfig } from '@/users/config/formUsuario';
+import { CreateUser, createUserValidation } from '@/users/validations/user';
 
 interface Props {
 	id: string;

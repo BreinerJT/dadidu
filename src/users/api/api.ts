@@ -1,20 +1,8 @@
 import { dadiduApi } from '@/apis/dadiduApi';
+import { Data } from '@/users/types/user';
 import { CreateUser, EditUser } from '@/validations/user';
-import { useMutation, useQueryClient } from 'react-query';
 
-const deleteUser = async ({ id }: { id: number }) => {
-	const data = [
-		{
-			recPKey: id,
-			recEstreg: 2
-		}
-	];
-
-	const resp = await dadiduApi.patch('/api/users/changestatus', data);
-	return resp.data;
-};
-
-const createUser = async (body: CreateUser) => {
+export const createUser = async (body: CreateUser) => {
 	const data = {
 		rspData: [
 			{
@@ -44,7 +32,20 @@ const createUser = async (body: CreateUser) => {
 	return resp.data;
 };
 
-const editUser = async ({ body, id }: { body: EditUser; id: number }) => {
+export const getUserById = async (id: string) => {
+	const user = await dadiduApi.get<Data>(
+		`/api/users?currentpage=1&pagesize=10&parameter=PKEY&filter=${id}`
+	);
+	return user.data.rspData[0];
+};
+
+export const editUser = async ({
+	body,
+	id
+}: {
+	body: EditUser;
+	id: number;
+}) => {
 	const data = {
 		rspData: [
 			{
@@ -75,30 +76,14 @@ const editUser = async ({ body, id }: { body: EditUser; id: number }) => {
 	return resp.data;
 };
 
-export const useUserMutation = () => {
-	const queryClient = useQueryClient();
-
-	const deleteMutation = useMutation({
-		mutationFn: deleteUser,
-		onSuccess: () => {
-			queryClient.invalidateQueries(['users']);
+export const deleteUser = async ({ id }: { id: number }) => {
+	const data = [
+		{
+			recPKey: id,
+			recEstreg: 2
 		}
-	});
+	];
 
-	const createMutation = useMutation({
-		mutationFn: createUser,
-		onSuccess: () => {
-			queryClient.invalidateQueries(['users']);
-		}
-	});
-
-	const editMutation = useMutation({
-		mutationFn: editUser
-	});
-
-	return {
-		createMutation,
-		deleteMutation,
-		editMutation
-	};
+	const resp = await dadiduApi.patch('/api/users/changestatus', data);
+	return resp.data;
 };

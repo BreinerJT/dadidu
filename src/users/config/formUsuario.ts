@@ -1,4 +1,4 @@
-import { FormUsuarioConfig } from '@/types';
+import { FormUsuarioConfig } from '@/users/types/formUsuarioConfig';
 
 export const formUsuarioConfig: FormUsuarioConfig = {
 	tipoIdentificacion: [

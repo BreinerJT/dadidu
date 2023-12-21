@@ -3,9 +3,9 @@ import Head from 'next/head';
 
 import { styled } from '@mui/material/styles';
 
-import { SideNav } from '@/components/dashboard/side-nav';
-import { TopNav } from '@/components/dashboard/top-nav';
-import { layoutConfig } from '@/config/layout';
+import { SideNav } from '@/shared/layout/side-nav';
+import { TopNav } from '@/shared/layout/top-nav';
+import { layoutConfig } from '@/shared/config/layout';
 
 const LayoutRoot = styled('div')(({ theme }) => ({
 	display: 'flex',

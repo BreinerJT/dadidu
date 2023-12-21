@@ -11,11 +11,11 @@ import {
 } from '@mui/material';
 import { LucideIcon } from 'lucide-react';
 
-import { Logo } from '@/components/shared/Logo';
-import { Scrollbar } from '@/components/shared/Scrollbar';
-import { SideNavItem } from '@/components/dashboard/side-nav-item';
-import { Icons } from '@/components/shared/Icons';
-import { dashboardConfig } from '@/config/dashboard';
+import { Logo } from '@/shared/components/Logo';
+import { Scrollbar } from '@/shared/components/Scrollbar';
+import { SideNavItem } from '@/shared/layout/side-nav-item';
+import { Icons } from '@/shared/components/Icons';
+import { dashboardConfig } from '@/shared/config/dashboard';
 
 export const SideNav = ({
 	open,

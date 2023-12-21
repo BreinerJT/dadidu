@@ -6,7 +6,7 @@ import { ThemeProvider } from '@emotion/react';
 import { CssBaseline } from '@mui/material';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-import { createTheme } from '@/theme/createTheme';
+import { createTheme } from '@/shared/theme/createTheme';
 
 import '@/styles/globals.css';
 import 'simplebar-react/dist/simplebar.min.css';
